@@ -24,6 +24,14 @@ config :petal, PetalWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "CMELWP0Z1RK2+WE99eotKyiJqqnYdJPrYMZoeJN5z8WHAkZruqhEem9B1wRLSx1n",
   watchers: [
+    npx: [
+      "tailwindcss",
+      "--input=css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--postcss",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ],
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
