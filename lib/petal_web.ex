@@ -98,6 +98,9 @@ defmodule PetalWeb do
       import PetalWeb.ErrorHelpers
       import PetalWeb.Gettext
       alias PetalWeb.Router.Helpers, as: Routes
+
+      # Import Petal Components
+      use PetalComponents
     end
   end
 
